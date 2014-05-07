@@ -86,8 +86,6 @@ class MainPage(webapp2.RequestHandler):
             self.response.write('<blockquote>%s</blockquote>' %
                                 cgi.escape(greeting.content))
 
-        # Print out list of Guestbooks.
-
         if users.get_current_user():
             url = users.create_logout_url(self.request.uri)
             url_linktext = 'Logout'
@@ -100,6 +98,7 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(MAIN_PAGE_FOOTER_TEMPLATE %
                             (sign_query_params, cgi.escape(guestbook_name),
                              url, url_linktext))
+
 
 
 class Guestbook(webapp2.RequestHandler):
