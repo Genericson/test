@@ -2,23 +2,21 @@ application: test
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: yes
+threadsafe: true
 
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /javascript
+  static_dir: /javascript
 
-- url: .*
-  script: main.app
-  
-indexes:
-- kind: Greeting
-  ancestor: yes
-  properties:
-  - name: date
-    direction: desc
+- url: /.*
+  script: main.application
+
 
 libraries:
 - name: webapp2
-  version: "latest"
+  version: latest
+- name: jinja2
+  version: latest
+
