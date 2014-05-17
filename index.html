@@ -2,12 +2,12 @@
 {% autoescape true %}
 <html lang="en">
   <head>
-    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
-	<link type="
+    <link type="text/css" rel="stylesheet" href="stylesheets/main.css" />
   </head>
-  <body>
+  <script src="scripts/script.js"></script>
+  <body onload="init()">
     <div>
-	  <canvas id="a" width="300" height="225"></canvas>
+	  <canvas id="canvas_a" width="300" height="225" onclick="draw();"></canvas>
 	</div>
     {% for greeting in greetings %}
       {% if greeting.author %}
